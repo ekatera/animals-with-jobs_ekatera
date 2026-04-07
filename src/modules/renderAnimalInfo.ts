@@ -18,6 +18,7 @@ export default function renderAnimalInfo(animal: Animal) {
   //Skriv ut djurets namn och typ av djur. Följ det här formatet: "Gina the Giraffe"
   const nameAttr = document.createElement( "p" );
   nameAttr.textContent = `${animal.name} the ${animal.kindOfAnimal}`;
+  nameAttr.classList.add( "animal-name" );
   animalInfoContainer.appendChild( nameAttr );
 
   //Skriv ut djurets jobb och om djuret är anställd just nu eller inte.
@@ -29,6 +30,7 @@ export default function renderAnimalInfo(animal: Animal) {
   } else {
     jobAttr.textContent = `Currently not employed`;
   }
+  jobAttr.classList.add( "animal-job" );
   animalInfoContainer.appendChild( jobAttr );
 
   //Skriv ut djurets ålder (age). EJ året de är födda. Utan hur gamla de är.
@@ -37,7 +39,7 @@ export default function renderAnimalInfo(animal: Animal) {
   //Bonus om du skriver ut rubriken "Age" med CSS.
   const age = new Date().getFullYear() - parseInt(animal.birthYear);
   const ageAttr = document.createElement( "span" );
-
+  ageAttr.classList.add( "animal-age" );
   ageAttr.textContent = `${age} years old`;
   
   animalInfoContainer.appendChild( ageAttr );
@@ -56,12 +58,14 @@ export default function renderAnimalInfo(animal: Animal) {
     animal.skills.forEach( skill => {
       const skillItem = document.createElement( "li" );
       skillItem.textContent = skill;
+      skillsAttr.classList.add( "animal-skills" );
       skillsAttr.appendChild( skillItem );
     });
     animalInfoContainer.appendChild( skillsAttr );
   } else {
     const skillsAttr = document.createElement( "span" );
     skillsAttr.textContent = animal.skills;
+    skillsAttr.classList.add( "animal-skills" );
     animalInfoContainer.appendChild( skillsAttr );
   }
 }

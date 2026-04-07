@@ -20,7 +20,7 @@ body {
 .list-of-animals ul {
     display: flex;
     list-style-type: none;
-    gap: 20px;
+    gap: 1.5rem;
 }
 .list-of-animals ul li{
   display: inline;
@@ -45,4 +45,41 @@ body {
     border-radius: 50%;
     border: 6px solid white;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-family: "Courier New", monospace;
+    align-self: center;
+}
+
+.animal-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #848282;
+    font-weight: lighter;
+}
+
+.animal-age::before {
+  content: "Age: ";
+  color: #848282;
+}
+
+
+.animal-job, .animal-age{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    max-width:350px;
+    width: 30%;
+}
+
+
+.animal-skills::before {
+  content: "Skills: ";
+  color: #848282;
+}
+
+.animal-skills {
+    font-size: 16px;
+    list-style-type: none;
+    text-align: left;
+    max-width: 350px;
+    width: 30%;
 }
